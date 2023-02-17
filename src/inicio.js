@@ -13,7 +13,7 @@ function Inicio() {
   
     return(
   
-    <Grid item xs={2}  key={product.id}>
+    <Grid item xs={6} md={4} key={product.id}>
     <Tarjeta name={product.name} image={product.img}
    price={product.price} id={product.id} />
   </Grid> ) } ) }

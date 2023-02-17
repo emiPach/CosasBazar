@@ -78,7 +78,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
             >
              Cosas Bazar
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { md: 'flex', xs:'flex' }}}  >
             {pages.map((page) => (
               <Link to={`/${page.id}`}  key={page.name}> 
               <Button
@@ -87,7 +87,9 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
                 sx={{ my: 2, color: 'white', display: 'block' }}
 
               >
+                <Typography variant="body2" gutterBottom>
                 {page.name}
+        </Typography> 
               </Button>
               </Link>
             ))}

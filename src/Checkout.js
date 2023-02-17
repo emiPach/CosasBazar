@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Tarjeta from "./Card";
@@ -8,7 +7,7 @@ import {useEffect } from 'react';
 import {cambiar } from './reducers/total';
 import {vaciar } from './reducers/carrito';
 import {Link } from "react-router-dom";
-
+import Grid from '@mui/material/Grid';
 
 export default function Checkout(){
 const carro = useSelector((state) => state.carro);
@@ -58,22 +57,23 @@ const handleVaciar = () => {
 <div >
        
  <Box sx={{ width: '100%' }}>
-      <Stack spacing={2}>
+ <Grid container >
     
        
        {carro?.map( ( cosas ) => {
         
   return(
-    <Box sx={{width: '20%',
-    height: 'auto',}} key={cosas.payload.id}>
+    <Grid sx={{width: '20%',
+    height: 'auto',}} key={cosas.payload.id} xs={6} md={4}>
     <Tarjeta name={ cosas.payload.name} image={cosas.payload.image} price={cosas.payload.price} id={cosas.payload.id} 
     quitar={true}/>
-    </Box>
+    </Grid>
  ) } ) 
  }
 
 
-       </Stack>
+</Grid> 
+
        <Typography variant='h4'  gutterBottom>
          {total.payload}
         </Typography>
